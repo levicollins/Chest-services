@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.H.E.S.T Services - Customers Helpdesk For Effective Support Terminal</title>
+    <style>
+        :root {
+            --primary-color: #0a3d4a;
+            --secondary-color: #1a5c6b;
+            --accent-color: #ffffff;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--accent-color);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            width: 200px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid #e9ecef;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section {
+            background-color: var(--light-color);
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: var(--accent-color);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .contact-info {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzAwIj4KICAgIDxwYXRoIGQ9Ik0xNTAgMTUwIE0xNTAgMTUwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwYTNENEEiIHN0cm9rZS13aWR0aD0iMiI+PC9wYXRoPgogICAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSIxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBBM0Q0QSIgc3Ryb2tlLXdpZHRoPSIyIj48L2NpcmNsZT4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBBM0Q0QSIgc3Ryb2tlLXdpZHRoPSIyIj48L2NpcmNsZT4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBBM0Q0QSIgc3Ryb2tlLXdpZHRoPSIyIj48L2NpcmNsZT4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iNDQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBBM0Q0QSIgc3Ryb2tlLXdpZHRoPSIyIj48L2NpcmNsZT4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBBM0Q0QSIgc3Ryb2tlLXdpZHRoPSIyIj48L2NpcmNsZT4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBBM0Q0QSIgc3Ryb2tlLXdpZHRoPSIyIj48L2NpcmNsZT4KICAgIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMEEzRDRCIiBzdHJva2Utd2lkdGg9IjIiPjwvY2lyY2xlPgogICAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSIyIiBmaWxsPSIjMEEzRDRCIj48L2NpcmNsZT4KICAgIDxsaW5lIHgxPSIxNTAiIHkxPSIxNTAiIHgyPSIxNTAiIHkyPSIxNTAiIHN0cm9rZT0iIzBBM0Q0QSIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+Cjwvc3ZnPg==" alt="C.H.E.S.T Services Logo" class="logo">
+            </div>
+            <h1>C.H.E.S.T Services</h1>
+            <p class="tagline">Customers Helpdesk For Effective Support Terminal</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Customer Service Solutions</h3>
+                    <p>We provide comprehensive customer service solutions for companies and businesses to effectively support their clients, ensuring satisfaction and loyalty.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Social Media Management</h3>
+                    <p>We manage your social media presence across platforms, creating engaging content, scheduling posts, and monitoring engagement to grow your brand.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Social Media Revamping</h3>
+                    <p>Transform your social media profiles with our revamping services that include profile optimization, content strategy, and visual branding updates.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>AI Integration</h3>
+                    <p>Implement AI-powered tools for automated Instagram comment and direct message responses, enhancing engagement while saving time.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Social Media Settings</h3>
+                    <p>We optimize your social media settings for maximum visibility, security, and performance, ensuring your accounts are configured for success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any inquiries or to start working together.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>WhatsApp: <a href="https://wa.me/2348051166203" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">+2348051166203</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span>Email: <a href="mailto:thechestservices@gmail.com" style="color: var(--secondary-color); text-decoration: underline;">thechestservices@gmail.com</a></span>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/2348051166203" target="_blank" class="whatsapp-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.034-.967-.277-.099-.479-.148-.684-.148-.202 0-.53.074-.732.124-1.068.321-2.084.967-2.868 1.752-1.068.967-1.676 2.033-1.676 3.124 0 .572.202 1.095.58 1.518.378.424.855.722 1.406.867.554.149 1.107.149 1.676.149 1.307 0 2.563-.572 3.483-1.244.554-.373 1.068-.867 1.406-1.391.338-.523.53-.967.53-1.441 0-.524-.202-.967-.53-1.391-.338-.424-.732-.771-1.232-1.118zm-12.268 8.017c-.378 0-.684-.074-.986-.223-.297-.149-.554-.373-.732-.671-.178-.297-.297-.671-.297-1.045 0-.373.119-.747.297-1.045.178-.297.435-.523.732-.671.297-.149.603-.223.986-.223.378 0 .684.074.986.223.297.148.554.374.732.671.178.298.297.672.297 1.045 0 .374-.119.748-.297 1.045-.178.298-.435.524-.732.671-.297.149-.603.223-.986.223zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-2.757 0-5.325-.97-7.352-2.597l-.53-.424c-.732-.572-1.068-1.391-1.068-2.235 0-.844.338-1.663 1.068-2.235.732-.572 1.676-.967 2.663-.967.53 0 1.068.149 1.558.373.479.223.986.524 1.406.867.435.373.855.747 1.232 1.118.378.373.732.747.986 1.118.277.373.53.747.684 1.118.178.373.297.747.297 1.118 0 .524-.202.967-.53 1.391-.338.424-.732.771-1.232 1.118-.554.373-1.107.671-1.758.867-.684.149-1.406.223-2.128.223z"/>
+                </svg>
+                Chat with us on WhatsApp
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 C.H.E.S.T Services. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
